@@ -18,6 +18,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Contacts
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -27,6 +28,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -159,5 +161,26 @@ fun AddContactScreen(
                 Text("Ajouter")
             }
         }
+    }
+
+    if (viewModel.pendingForeignNumberWarning) {
+        AlertDialog(
+            onDismissRequest = viewModel::dismissForeignNumberWarning,
+            title = { Text("Numéro non sénégalais") },
+            text = {
+                Text(
+                    "Ce numéro ne semble pas être un numéro sénégalais (+221). " +
+                        "Wakh est destiné aux numéros sénégalais. Voulez-vous continuer quand même ?",
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = { viewModel.confirmForeignNumberAndSubmit(onDone) }) {
+                    Text("Continuer")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = viewModel::dismissForeignNumberWarning) { Text("Annuler") }
+            },
+        )
     }
 }

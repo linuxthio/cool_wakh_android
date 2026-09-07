@@ -1,7 +1,9 @@
 package com.wakh.app.ui.conversations
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,7 +21,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Groups
 import androidx.compose.material.icons.filled.PersonAdd
+import androidx.compose.material.icons.filled.PersonRemove
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -30,6 +34,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -45,6 +50,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.wakh.app.data.local.db.ContactEntity
 import com.wakh.app.data.local.db.MessageDirection
 import com.wakh.app.data.repository.ContactRepository
 import com.wakh.app.data.repository.GroupRepository
@@ -126,7 +132,13 @@ fun ConversationsListScreen(
         } else {
             LazyColumn(modifier = Modifier.padding(padding).fillMaxSize()) {
                 items(conversations, key = { it.conversationId }) { convo ->
-                    ConversationRow(convo, onClick = { onOpenChat(convo.conversationId) })
+                    ConversationRow(
+                        convo,
+                        onClick = { onOpenChat(convo.conversationId) },
+                        onRemoveContact = (convo.target as? ConversationTarget.Direct)?.let { direct ->
+                            { viewModel.removeContact(direct.contact) }
+                        },
+                    )
                     HorizontalDivider(color = SkyBlueSurfaceTint)
                 }
             }
@@ -134,46 +146,91 @@ fun ConversationsListScreen(
     }
 }
 
+/**
+ * Une conversation individuelle (pas un groupe, voir [onRemoveContact])
+ * peut être retirée de ses contacts par un appui long : menu "Supprimer
+ * le contact" puis confirmation. Cela ne supprime que le contact
+ * (Room, [ContactEntity]) — l'historique local des messages échangés
+ * avec ce numéro n'est pas effacé.
+ */
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun ConversationRow(convo: ConversationUi, onClick: () -> Unit) {
+private fun ConversationRow(convo: ConversationUi, onClick: () -> Unit, onRemoveContact: (() -> Unit)? = null) {
     val hasUnread = convo.unreadCount > 0
+    var showActionsMenu by remember { mutableStateOf(false) }
+    var showRemoveConfirm by remember { mutableStateOf(false) }
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-            .padding(horizontal = 16.dp, vertical = 14.dp),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        ConversationAvatar(target = convo.target, displayName = convo.displayName)
-        Spacer(Modifier.width(12.dp))
-        Column(Modifier.weight(1f)) {
-            Text(convo.displayName, fontWeight = FontWeight.SemiBold)
-            Text(
-                text = conversationPreview(convo),
-                style = MaterialTheme.typography.bodySmall,
-                fontWeight = if (hasUnread) FontWeight.Bold else FontWeight.Normal,
-                color = if (hasUnread) {
-                    MaterialTheme.colorScheme.onSurface
-                } else {
-                    MaterialTheme.colorScheme.onSurfaceVariant
-                },
-                maxLines = 1,
-            )
-        }
-        Column(horizontalAlignment = Alignment.End) {
-            convo.lastMessage?.let {
+    Box {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .combinedClickable(
+                    onClick = onClick,
+                    onLongClick = onRemoveContact?.let { { showActionsMenu = true } },
+                )
+                .padding(horizontal = 16.dp, vertical = 14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            ConversationAvatar(target = convo.target, displayName = convo.displayName)
+            Spacer(Modifier.width(12.dp))
+            Column(Modifier.weight(1f)) {
+                Text(convo.displayName, fontWeight = FontWeight.SemiBold)
                 Text(
-                    text = formatTimestamp(it.timestamp),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    text = conversationPreview(convo),
+                    style = MaterialTheme.typography.bodySmall,
+                    fontWeight = if (hasUnread) FontWeight.Bold else FontWeight.Normal,
+                    color = if (hasUnread) {
+                        MaterialTheme.colorScheme.onSurface
+                    } else {
+                        MaterialTheme.colorScheme.onSurfaceVariant
+                    },
+                    maxLines = 1,
                 )
             }
-            if (hasUnread) {
-                Spacer(Modifier.height(4.dp))
-                UnreadBadge(count = convo.unreadCount)
+            Column(horizontalAlignment = Alignment.End) {
+                convo.lastMessage?.let {
+                    Text(
+                        text = formatTimestamp(it.timestamp),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                if (hasUnread) {
+                    Spacer(Modifier.height(4.dp))
+                    UnreadBadge(count = convo.unreadCount)
+                }
             }
         }
+
+        if (onRemoveContact != null) {
+            DropdownMenu(expanded = showActionsMenu, onDismissRequest = { showActionsMenu = false }) {
+                DropdownMenuItem(
+                    text = { Text("Supprimer le contact") },
+                    leadingIcon = { Icon(Icons.Default.PersonRemove, contentDescription = null) },
+                    onClick = {
+                        showActionsMenu = false
+                        showRemoveConfirm = true
+                    },
+                )
+            }
+        }
+    }
+
+    if (showRemoveConfirm && onRemoveContact != null) {
+        AlertDialog(
+            onDismissRequest = { showRemoveConfirm = false },
+            title = { Text("Supprimer ${convo.displayName} ?") },
+            text = { Text("Ce contact sera retiré de votre liste. L'historique des messages n'est pas effacé.") },
+            confirmButton = {
+                TextButton(onClick = {
+                    showRemoveConfirm = false
+                    onRemoveContact()
+                }) { Text("Supprimer") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showRemoveConfirm = false }) { Text("Annuler") }
+            },
+        )
     }
 }
 

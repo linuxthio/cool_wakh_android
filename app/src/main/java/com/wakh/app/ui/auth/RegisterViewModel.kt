@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wakh.app.data.repository.AuthRepository
 import com.wakh.app.ui.common.PIN_LENGTH
+import com.wakh.app.util.canonicalSenegalesePhoneNumber
+import com.wakh.app.util.hasNonSenegaleseCountryCode
 import com.wakh.app.util.isValidPhoneNumber
 import com.wakh.app.util.stripPhoneNumberSeparators
 import kotlinx.coroutines.launch
@@ -19,8 +21,10 @@ class RegisterViewModel(
         private set
     /**
      * Numéro saisi manuellement, tel quel — avec indicatif (ex.
-     * "+221771234567") ou sans (ex. "771234567"). Jamais modifié au-delà
-     * du retrait des espaces/tirets de présentation, voir [submit].
+     * "+221771234567") ou sans (ex. "771234567"). Wakh ne ciblant que le
+     * Sénégal, l'indicatif "221" est retiré avant utilisation comme
+     * identifiant réel (voir [canonicalSenegalesePhoneNumber] dans
+     * [submit]) : les deux formes désignent le même compte.
      */
     var phoneNumber by mutableStateOf("")
         private set
@@ -33,25 +37,40 @@ class RegisterViewModel(
         private set
     var isLoading by mutableStateOf(false)
         private set
+    /** Vrai si le numéro saisi porte un indicatif explicite non sénégalais : demande confirmation avant de continuer. */
+    var pendingForeignNumberWarning by mutableStateOf(false)
+        private set
+
+    /** Dernier numéro nettoyé pour lequel l'utilisateur a confirmé vouloir continuer malgré l'indicatif non sénégalais. */
+    private var foreignNumberConfirmedFor: String? = null
 
     fun onNameChange(value: String) { name = value; errorMessage = null }
-    fun onPhoneChange(value: String) { phoneNumber = value; errorMessage = null }
+    fun onPhoneChange(value: String) { phoneNumber = value; errorMessage = null; pendingForeignNumberWarning = false }
     fun onPinChange(value: String) { pin = value; errorMessage = null }
     fun onConfirmPinChange(value: String) { confirmPin = value; errorMessage = null }
 
+    fun dismissForeignNumberWarning() { pendingForeignNumberWarning = false }
+
+    fun confirmForeignNumberAndSubmit(onDone: () -> Unit) {
+        foreignNumberConfirmedFor = stripPhoneNumberSeparators(phoneNumber)
+        pendingForeignNumberWarning = false
+        submit(onDone)
+    }
+
     fun submit(onDone: () -> Unit) {
         val trimmedName = name.trim()
-        // Aucun indicatif ajouté/deviné : le numéro proposé par
-        // l'utilisateur est utilisé tel quel, une fois les espaces/tirets
-        // de présentation retirés.
-        val normalizedPhone = stripPhoneNumberSeparators(phoneNumber)
+        val cleanedPhone = stripPhoneNumberSeparators(phoneNumber)
 
         if (trimmedName.isBlank()) {
             errorMessage = "Entrez votre nom"
             return
         }
-        if (!isValidPhoneNumber(normalizedPhone)) {
+        if (!isValidPhoneNumber(cleanedPhone)) {
             errorMessage = "Numéro de téléphone invalide (ex. +221771234567 ou 771234567)"
+            return
+        }
+        if (hasNonSenegaleseCountryCode(cleanedPhone) && foreignNumberConfirmedFor != cleanedPhone) {
+            pendingForeignNumberWarning = true
             return
         }
         if (pin.length != PIN_LENGTH) {
@@ -62,6 +81,12 @@ class RegisterViewModel(
             errorMessage = "Les codes PIN ne correspondent pas"
             return
         }
+
+        // Wakh ne ciblant que le Sénégal, l'indicatif "221" (avec ou sans
+        // "+") est retiré : c'est ce numéro canonique qui sert d'identité
+        // réelle, pour que deux saisies du même numéro physique désignent
+        // toujours le même compte.
+        val normalizedPhone = canonicalSenegalesePhoneNumber(cleanedPhone)
 
         isLoading = true
         viewModelScope.launch {

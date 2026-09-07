@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -143,5 +144,26 @@ fun LoginScreen(
                 }
             }
         }
+    }
+
+    if (viewModel.pendingForeignNumberWarning) {
+        AlertDialog(
+            onDismissRequest = viewModel::dismissForeignNumberWarning,
+            title = { Text("Numéro non sénégalais") },
+            text = {
+                Text(
+                    "Ce numéro ne semble pas être un numéro sénégalais (+221). " +
+                        "Wakh est destiné aux numéros sénégalais. Voulez-vous continuer quand même ?",
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = { viewModel.confirmForeignNumberAndSubmit(onLoggedIn) }) {
+                    Text("Continuer")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = viewModel::dismissForeignNumberWarning) { Text("Annuler") }
+            },
+        )
     }
 }

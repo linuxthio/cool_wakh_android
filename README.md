@@ -19,7 +19,7 @@ résumé technique ci-dessous.
 
 ## Ce qui a été implémenté
 
-- **Numéro saisi manuellement, tel quel, sans sélecteur ni transformation** : à l'inscription, la connexion (formulaire complet) et l'ajout de contact, le numéro proposé par l'utilisateur est utilisé exactement tel quel — avec indicatif ("+221771234567") ou sans ("771234567"), peu importe. La seule opération appliquée est le retrait des espaces/tirets/points de présentation (`util/PhoneNumberUtils.stripPhoneNumberSeparators`) : **aucun indicatif n'est jamais ajouté, deviné ou complété**. Il n'y a donc plus de notion d'indicatif géré par l'app : deux façons différentes d'écrire le même numéro physique (avec/sans "+") sont traitées comme deux identifiants distincts, à la charge de l'utilisateur de rester cohérent d'une saisie à l'autre.
+- **Numéro saisi manuellement, identification indépendante de l'indicatif sénégalais** : Wakh étant destiné aux numéros sénégalais (indicatif "+221", qui ne varie jamais pour ce public), l'inscription, la connexion (formulaire complet) et l'ajout de contact acceptent le numéro avec indicatif ("+221771234567"/"221771234567") ou sans ("771234567") — les séparateurs de présentation sont retirés (`util/PhoneNumberUtils.stripPhoneNumberSeparators`) puis l'indicatif "221" est retiré s'il est présent (`canonicalSenegalesePhoneNumber`) pour obtenir l'identifiant réel : les deux formes désignent donc désormais le **même** compte/contact. Si le numéro saisi porte un indicatif international explicite différent de "+221" (`hasNonSenegaleseCountryCode`), l'app affiche un avertissement ("Ce numéro ne semble pas être un numéro sénégalais...") avant de permettre de continuer quand même, tel quel (aucune transformation n'est appliquée à un numéro non sénégalais).
 - **Reconnexion par code PIN seul** (`UserPreferences.rememberedIdentity`) : une fois connecté sur un appareil, nom et numéro y restent mémorisés même après déconnexion — se reconnecter sur ce même appareil ne demande alors que le code PIN. Un lien "Utiliser un autre compte" permet de repasser au formulaire complet (nom + numéro détecté/saisi + PIN) si besoin.
 - **Ouverture de documents avec les applications installées** (`util/MediaStorage.openMediaExternally`) : sélecteur explicite "Ouvrir avec..." (`Intent.createChooser`) plutôt qu'une résolution implicite, avec message clair si aucune application installée ne peut ouvrir ce type de fichier (au lieu d'un échec silencieux).
 
@@ -121,13 +121,12 @@ résumé technique ci-dessous.
 
 ## Limitations connues (assumées pour ce projet)
 
-- Le numéro n'est jamais transformé (voir ci-dessus) : "771234567" et
-  "+221771234567" sont deux identifiants DIFFÉRENTS pour l'app, même
-  s'ils désignent le même téléphone. Un compte créé avec l'un ne peut pas
-  se reconnecter avec l'autre, et un contact ajouté sous l'un ne
-  correspondra pas à un compte enregistré sous l'autre. À la charge de
-  l'utilisateur de rester cohérent (idéalement, toujours saisir le numéro
-  complet avec l'indicatif).
+- L'indicatif sénégalais est ignoré à l'identification (voir ci-dessus) :
+  "771234567" et "+221771234567" désignent désormais le MÊME compte. Un
+  numéro avec un autre indicatif n'est en revanche pas normalisé (l'app
+  se contente d'avertir) : deux saisies différentes d'un même numéro
+  étranger (ex. avec/sans le "+") resteraient deux identifiants
+  distincts, comme avant pour tous les numéros.
 - La reconnexion "PIN seul" (`UserPreferences.rememberedIdentity`) est
   propre à l'appareil : se connecter à un compte existant depuis un
   appareil qui ne l'a jamais utilisé demande toujours le formulaire

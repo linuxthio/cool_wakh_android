@@ -9,6 +9,8 @@ import com.wakh.app.data.local.datastore.RememberedIdentity
 import com.wakh.app.data.local.datastore.UserPreferences
 import com.wakh.app.data.repository.AuthRepository
 import com.wakh.app.ui.common.PIN_LENGTH
+import com.wakh.app.util.canonicalSenegalesePhoneNumber
+import com.wakh.app.util.hasNonSenegaleseCountryCode
 import com.wakh.app.util.isValidPhoneNumber
 import com.wakh.app.util.stripPhoneNumberSeparators
 import kotlinx.coroutines.flow.SharingStarted
@@ -46,10 +48,24 @@ class LoginViewModel(
         private set
     var isLoading by mutableStateOf(false)
         private set
+    /** Vrai si le numéro saisi porte un indicatif explicite non sénégalais : demande confirmation avant de continuer. */
+    var pendingForeignNumberWarning by mutableStateOf(false)
+        private set
+
+    /** Dernier numéro nettoyé pour lequel l'utilisateur a confirmé vouloir continuer malgré l'indicatif non sénégalais. */
+    private var foreignNumberConfirmedFor: String? = null
 
     fun onNameChange(value: String) { name = value; errorMessage = null }
-    fun onPhoneChange(value: String) { phoneNumber = value; errorMessage = null }
+    fun onPhoneChange(value: String) { phoneNumber = value; errorMessage = null; pendingForeignNumberWarning = false }
     fun onPinChange(value: String) { pin = value; errorMessage = null }
+
+    fun dismissForeignNumberWarning() { pendingForeignNumberWarning = false }
+
+    fun confirmForeignNumberAndSubmit(onDone: () -> Unit) {
+        foreignNumberConfirmedFor = stripPhoneNumberSeparators(phoneNumber)
+        pendingForeignNumberWarning = false
+        submit(onDone)
+    }
 
     /** Bascule vers le formulaire complet sans effacer l'identité mémorisée tant que la connexion n'a pas réussi. */
     fun useDifferentAccount() {
@@ -70,17 +86,23 @@ class LoginViewModel(
             effectivePhone = remembered.phoneNumber
         } else {
             effectiveName = name.trim()
-            // Aucun indicatif ajouté/deviné : même principe qu'à
-            // l'inscription, le numéro proposé est utilisé tel quel.
-            effectivePhone = stripPhoneNumberSeparators(phoneNumber)
+            val cleanedPhone = stripPhoneNumberSeparators(phoneNumber)
             if (effectiveName.isBlank()) {
                 errorMessage = "Entrez votre nom"
                 return
             }
-            if (!isValidPhoneNumber(effectivePhone)) {
+            if (!isValidPhoneNumber(cleanedPhone)) {
                 errorMessage = "Numéro de téléphone invalide (ex. +221771234567 ou 771234567)"
                 return
             }
+            if (hasNonSenegaleseCountryCode(cleanedPhone) && foreignNumberConfirmedFor != cleanedPhone) {
+                pendingForeignNumberWarning = true
+                return
+            }
+            // Wakh ne ciblant que le Sénégal, l'indicatif "221" est
+            // retiré : même numéro canonique qu'à l'inscription, pour que
+            // deux saisies du même numéro physique désignent le même compte.
+            effectivePhone = canonicalSenegalesePhoneNumber(cleanedPhone)
         }
 
         if (pin.length != PIN_LENGTH) {

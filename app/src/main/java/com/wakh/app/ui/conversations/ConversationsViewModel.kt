@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 /** Une conversation est soit individuelle (un contact), soit de groupe. */
 sealed class ConversationTarget {
@@ -31,7 +32,7 @@ data class ConversationUi(
 )
 
 class ConversationsViewModel(
-    contactRepository: ContactRepository,
+    private val contactRepository: ContactRepository,
     messageRepository: MessageRepository,
     groupRepository: GroupRepository,
 ) : ViewModel() {
@@ -78,4 +79,9 @@ class ConversationsViewModel(
             }
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    /** Retire un contact déjà enregistré (voir ContactRepository.removeContact) — l'historique des messages n'est pas effacé. */
+    fun removeContact(contact: ContactEntity) {
+        viewModelScope.launch { contactRepository.removeContact(contact) }
+    }
 }
