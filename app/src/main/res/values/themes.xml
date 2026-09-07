@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Wakh" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#0EA5E9</item>
+        <item name="android:windowBackground">#F8FBFF</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+    </style>
+</resources>
