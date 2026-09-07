@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Expose uniquement les sous-dossiers médias de l'espace privé de
+         l'app (jamais tout le stockage externe), le temps qu'une
+         application tierce (visionneuse/lecteur vidéo/lecteur PDF) ouvre
+         le fichier. -->
+    <files-path name="audio" path="audio/" />
+    <files-path name="images" path="images/" />
+    <files-path name="videos" path="videos/" />
+    <files-path name="documents" path="documents/" />
+</paths>

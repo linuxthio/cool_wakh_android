@@ -1,7 +1,7 @@
 package com.wakh.app.ui.theme
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocal
+import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.graphics.Color
 
@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
  * n'aient à changer quoi que ce soit : le nom reste le même, seule la
  * valeur résolue change selon le thème actif.
  */
-val LocalWakhDarkTheme: CompositionLocal<Boolean> = compositionLocalOf { false }
+val LocalWakhDarkTheme: ProvidableCompositionLocal<Boolean> = compositionLocalOf { false }
 
 // Palette "bleu ciel" de Wakh — couleur de marque commune aux deux thèmes.
 val SkyBlue = Color(0xFF0EA5E9) // primaire

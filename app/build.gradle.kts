@@ -24,11 +24,11 @@ android {
         // "mon-serveur.com:8000" — JAMAIS une URL complète avec un
         // schéma ("https://..."). Le schéma est déjà déterminé
         // séparément par SIGNALING_USE_TLS ; l'inclure ici produirait une
-        // URL du type "https://https://mon-serveur.com" et l'erreur
+        // URL du type "https://https://mon-serveur.com" et l'erreup6r
         // Android "Unable to resolve host "https"" (ceci reste protégé
         // au runtime par util/ServerConfig.sanitizeSignalingHost, mais
         // autant configurer la bonne valeur dès le départ).
-        buildConfigField("String", "SIGNALING_HOST", "\"10.0.2.2:8000\"")
+        buildConfigField("String", "SIGNALING_HOST", "\"wakh.djibthiong.com\"")
         buildConfigField("boolean", "SIGNALING_USE_TLS", "false")
     }
 
@@ -46,6 +46,7 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+        freeCompilerArgs += listOf("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
     }
 
     buildFeatures {

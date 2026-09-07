@@ -147,6 +147,7 @@ class AudioQueueApi(
                     body.byteStream().copyTo(output)
                 }
             }
+            Unit
         }
     }
 

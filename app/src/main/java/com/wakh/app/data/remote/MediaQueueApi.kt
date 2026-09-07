@@ -157,6 +157,7 @@ class MediaQueueApi(
                     body.byteStream().copyTo(output)
                 }
             }
+            Unit
         }
     }
 

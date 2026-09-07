@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.wakh.app-debug-64:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.wakh.app-main-66:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.wakh.app-debug-64:/xml_backup_rules.xml.flat",
+        "source": "com.wakh.app-main-66:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.wakh.app-debug-64:/drawable_ic_wakh_notification.xml.flat",
+        "source": "com.wakh.app-main-66:/drawable/ic_wakh_notification.xml"
+    },
+    {
+        "merged": "com.wakh.app-debug-64:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.wakh.app-main-66:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.wakh.app-debug-64:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.wakh.app-main-66:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.wakh.app-debug-64:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.wakh.app-main-66:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.wakh.app-debug-64:/xml_file_paths.xml.flat",
+        "source": "com.wakh.app-main-66:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.wakh.app-debug-64:/xml_data_extraction_rules.xml.flat",
+        "source": "com.wakh.app-main-66:/xml/data_extraction_rules.xml"
+    }
+]

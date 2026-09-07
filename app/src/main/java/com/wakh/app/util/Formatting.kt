@@ -26,5 +26,6 @@ fun messageSummary(message: MessageEntity): String {
         MessageKind.AUDIO -> "$prefix message vocal (${formatDuration(message.durationMs)})"
         MessageKind.IMAGE -> "${prefix}Photo"
         MessageKind.VIDEO -> "${prefix}Vidéo (${formatDuration(message.durationMs)})"
+        MessageKind.DOCUMENT -> "${prefix}Document"
     }
 }

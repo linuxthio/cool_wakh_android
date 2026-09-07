@@ -1,0 +1,233 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.wakh.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- Réseau : WebSocket de signalisation + connexion WebRTC P2P -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:5:5-67
+12-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:5:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:6:5-79
+13-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:6:22-76
+14
+15    <!-- Enregistrement des messages vocaux -->
+16    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+16-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:9:5-71
+16-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:9:22-68
+17
+18    <!-- Service au premier plan pour rester joignable en P2P même en arrière-plan -->
+19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+19-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:12:5-77
+19-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:12:22-74
+20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+20-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:13:5-87
+20-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:13:22-84
+21    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+21-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:14:5-77
+21-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:14:22-74
+22    <uses-permission android:name="android.permission.WAKE_LOCK" />
+22-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:15:5-68
+22-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:15:22-65
+23
+24    <uses-feature
+24-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:17:5-88
+25        android:name="android.hardware.microphone"
+25-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:17:19-61
+26        android:required="true" />
+26-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:17:62-85
+27    <!-- La lib WebRTC déclare la caméra ; on ne l'utilise pas (audio uniquement). -->
+28    <uses-feature
+28-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:19:5-85
+29        android:name="android.hardware.camera"
+29-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:19:19-57
+30        android:required="false" />
+30-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:19:58-82
+31
+32    <permission
+32-->[androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+33        android:name="com.wakh.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+33-->[androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+34        android:protectionLevel="signature" />
+34-->[androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+35
+36    <uses-permission android:name="com.wakh.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+36-->[androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+36-->[androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+37
+38    <application
+38-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:21:5-65:19
+39        android:name="com.wakh.app.WakhApplication"
+39-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:22:9-40
+40        android:allowBackup="true"
+40-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:23:9-35
+41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+41-->[androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+42        android:dataExtractionRules="@xml/data_extraction_rules"
+42-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:24:9-65
+43        android:debuggable="true"
+44        android:extractNativeLibs="false"
+45        android:fullBackupContent="@xml/backup_rules"
+45-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:25:9-54
+46        android:icon="@mipmap/ic_launcher"
+46-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:26:9-43
+47        android:label="@string/app_name"
+47-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:27:9-41
+48        android:roundIcon="@mipmap/ic_launcher_round"
+48-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:28:9-54
+49        android:supportsRtl="true"
+49-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:29:9-35
+50        android:testOnly="true"
+51        android:theme="@style/Theme.Wakh"
+51-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:30:9-42
+52        android:usesCleartextTraffic="true" >
+52-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:31:9-44
+53
+54        <!--
+55             usesCleartextTraffic="true" : utile en développement pour un serveur
+56             de signalisation local en ws:// (ex: 10.0.2.2). En production,
+57             déployez le serveur derrière TLS (wss://) et retirez cet attribut.
+58        -->
+59
+60        <activity
+60-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:36:9-45:20
+61            android:name="com.wakh.app.MainActivity"
+61-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:37:13-41
+62            android:exported="true"
+62-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:38:13-36
+63            android:theme="@style/Theme.Wakh"
+63-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:39:13-46
+64            android:windowSoftInputMode="adjustResize" >
+64-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:40:13-55
+65            <intent-filter>
+65-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:41:13-44:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:42:17-69
+66-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:42:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:43:17-77
+68-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:43:27-74
+69            </intent-filter>
+70        </activity>
+71
+72        <service
+72-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:47:9-50:56
+73            android:name="com.wakh.app.service.SignalingForegroundService"
+73-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:48:13-63
+74            android:exported="false"
+74-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:49:13-37
+75            android:foregroundServiceType="dataSync" />
+75-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:50:13-53
+76
+77        <!--
+78             Permet d'ouvrir une image/vidéo reçue avec une application
+79             externe (visionneuse, lecteur vidéo) sans exposer directement
+80             de chemin file:// (interdit depuis Android 7+).
+81        -->
+82        <provider
+83            android:name="androidx.core.content.FileProvider"
+83-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:56:13-62
+84            android:authorities="com.wakh.app.fileprovider"
+84-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:57:13-64
+85            android:exported="false"
+85-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:58:13-37
+86            android:grantUriPermissions="true" >
+86-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:59:13-47
+87            <meta-data
+87-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:60:13-62:54
+88                android:name="android.support.FILE_PROVIDER_PATHS"
+88-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:61:17-67
+89                android:resource="@xml/file_paths" />
+89-->/home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:62:17-51
+90        </provider>
+91
+92        <activity
+92-->[androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+93            android:name="androidx.compose.ui.tooling.PreviewActivity"
+93-->[androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+94            android:exported="true" />
+94-->[androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+95
+96        <provider
+96-->[androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+97            android:name="androidx.startup.InitializationProvider"
+97-->[androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+98            android:authorities="com.wakh.app.androidx-startup"
+98-->[androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+99            android:exported="false" >
+99-->[androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+100            <meta-data
+100-->[androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+101                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+101-->[androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+102                android:value="androidx.startup" />
+102-->[androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+103            <meta-data
+103-->[androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:29:13-31:52
+104                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+104-->[androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:30:17-78
+105                android:value="androidx.startup" />
+105-->[androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:31:17-49
+106            <meta-data
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+108                android:value="androidx.startup" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+109        </provider>
+110
+111        <service
+111-->[androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+112            android:name="androidx.room.MultiInstanceInvalidationService"
+112-->[androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+113            android:directBootAware="true"
+113-->[androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+114            android:exported="false" />
+114-->[androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+115
+116        <receiver
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+117            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+118            android:directBootAware="false"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+119            android:enabled="true"
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+120            android:exported="true"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+121            android:permission="android.permission.DUMP" >
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+123                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+124            </intent-filter>
+125            <intent-filter>
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+126                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+127            </intent-filter>
+128            <intent-filter>
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+129                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+130            </intent-filter>
+131            <intent-filter>
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+132                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+133            </intent-filter>
+134        </receiver>
+135    </application>
+136
+137</manifest>

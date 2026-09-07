@@ -50,7 +50,7 @@ private val WakhDarkColorScheme = darkColorScheme(
  */
 @Composable
 fun WakhTheme(darkTheme: Boolean = false, content: @Composable () -> Unit) {
-    CompositionLocalProvider(LocalWakhDarkTheme provides darkTheme) {
+    CompositionLocalProvider(LocalWakhDarkTheme  provides darkTheme) {
         MaterialTheme(
             colorScheme = if (darkTheme) WakhDarkColorScheme else WakhLightColorScheme,
             typography = WakhTypography,

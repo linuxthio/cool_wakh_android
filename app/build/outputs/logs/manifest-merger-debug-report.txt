@@ -1,0 +1,500 @@
+-- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:55:9-63:20
+	android:grantUriPermissions
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:59:13-47
+	android:authorities
+		INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:57:13-64
+	android:exported
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:58:13-37
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:56:13-62
+manifest
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:2:1-66:12
+MERGED from [androidx.media3:media3-ui:1.4.1] /home/djibril/.gradle/caches/transforms-4/ceb4a4d87b9a1a1228dc1c015ff7af80/transformed/media3-ui-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-extractor:1.4.1] /home/djibril/.gradle/caches/transforms-4/2f07a0e32fc8450d1dbadf8c34d424b1/transformed/media3-extractor-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-container:1.4.1] /home/djibril/.gradle/caches/transforms-4/cdf9a41ee927019940dc59bb264f4298/transformed/media3-container-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-datasource:1.4.1] /home/djibril/.gradle/caches/transforms-4/57e112be912c3d33e1a55d9adc9248cd/transformed/media3-datasource-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-decoder:1.4.1] /home/djibril/.gradle/caches/transforms-4/0e9b85b422471b2ab3b81359966a154a/transformed/media3-decoder-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-database:1.4.1] /home/djibril/.gradle/caches/transforms-4/bfdad8349e054cb24d52bf3a23a684b4/transformed/media3-database-1.4.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-common:1.4.1] /home/djibril/.gradle/caches/transforms-4/cf5cc847a66b11d4dfb6aa0c71a640d1/transformed/media3-common-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /home/djibril/.gradle/caches/transforms-4/86c9fa3ee7ea776fc1a1b5641f26c02c/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.7.0] /home/djibril/.gradle/caches/transforms-4/b97d76c8ac756ff42a5e70855e8ff8e5/transformed/media-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.recyclerview:recyclerview:1.3.0] /home/djibril/.gradle/caches/transforms-4/a0111a8eaa95ea17f87c1e569db4fedb/transformed/recyclerview-1.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/djibril/.gradle/caches/transforms-4/fad8cbc8dcdf5bedd9c1a0bfb9724375/transformed/navigation-common-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/djibril/.gradle/caches/transforms-4/a111712371e645cf2807003ca6de9416/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/djibril/.gradle/caches/transforms-4/c99af9e9bdbae9bc5470ba2e50e43360/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/djibril/.gradle/caches/transforms-4/7fa559d4cd4ee263281c3616f8cfef18/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/djibril/.gradle/caches/transforms-4/b26e04bf40b14a42c88176cea3874e69/transformed/navigation-compose-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.9.1] /home/djibril/.gradle/caches/transforms-4/93697ca8b20383cf1bd252e4e788be96/transformed/activity-1.9.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.9.1] /home/djibril/.gradle/caches/transforms-4/26111f0661cfeb0fec3f70238c6881e0/transformed/activity-ktx-1.9.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /home/djibril/.gradle/caches/transforms-4/98dac8343058f4c560ba5fb775431be7/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [io.coil-kt:coil-compose:2.6.0] /home/djibril/.gradle/caches/transforms-4/6d9dd72368ed533160b994c55985a9e8/transformed/coil-compose-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.6.0] /home/djibril/.gradle/caches/transforms-4/59fdc0c9f7eda4d6efab7963ad262ac3/transformed/coil-compose-base-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/c43d63e721a69fa9ecd030d58649e5f7/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/9d330a12d728e5dae107135169818bdf/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/92d05fcb806016f96fe493e622aefaa5/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/201fc5161094c8b062cd73d52e74dbd8/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/9cda0623c1a35524b591727656d32541/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/fdfa8014f5a860ae559ee43f23e3e6a4/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/0d59a5c80f6771712406be5fdf084fce/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/f41fef7deb217ea57e1d84dbdcc5c7cf/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/3ec6be73ab89de3921e882a53d6919d8/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/78ef8fa56d761372dcd8a8c3d0c32691/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/0057571832d1b23519053c0f655d4b6a/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/8f6af11c66c3ebef3651c4e3c70304a0/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/dbab8845c411f02245097d6d709b652f/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/4b69441051794d6fe500a52081b66f08/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/7c9375bb59da4f3a7b30203136c6a755/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.activity:activity-compose:1.9.1] /home/djibril/.gradle/caches/transforms-4/a8a85188c3d6c1cdd363d58899d8a4a7/transformed/activity-compose-1.9.1/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-video:2.6.0] /home/djibril/.gradle/caches/transforms-4/f99032aee1629797f7bd972f4918fc12/transformed/coil-video-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil:2.6.0] /home/djibril/.gradle/caches/transforms-4/ab153c5b37094cc00114703d4fe663c8/transformed/coil-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.6.0] /home/djibril/.gradle/caches/transforms-4/d093b7c439389332c09643b08bf62db9/transformed/coil-base-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.4] /home/djibril/.gradle/caches/transforms-4/a49190bb40912082b2dee24167b9a74d/transformed/lifecycle-livedata-core-2.8.4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/djibril/.gradle/caches/transforms-4/4f1a8725232093b36824090f1c68b6be/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/djibril/.gradle/caches/transforms-4/90eb6a5afa8cd21e3f08f37053fad903/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/3c289165f7edddcb3452f955c9e6052c/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/bc3f17d74196cfb08dca06a5ddcf2683/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4] /home/djibril/.gradle/caches/transforms-4/708063783db15365ce2eb9cb307e169e/transformed/lifecycle-viewmodel-ktx-2.8.4/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.4] /home/djibril/.gradle/caches/transforms-4/c823f8c352b585da35173c110c2cd0f4/transformed/lifecycle-viewmodel-savedstate-2.8.4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/476c44388d08f3a036e14fc373e754ca/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/3fbe01142e2819e2520eedc1555491c5/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/f461f0c0a8e4a8e50aa05bed127be1af/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/djibril/.gradle/caches/transforms-4/e3509a0ad8652fe4e28ec69fc002aa16/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.ui:ui-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/6049f23b542b1736c1b6aae91441b1dd/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/djibril/.gradle/caches/transforms-4/388bfeaf5d959044447c22874c708ed4/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/djibril/.gradle/caches/transforms-4/48ccb7c3e6d1d5daf1773a0e823c14b1/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/djibril/.gradle/caches/transforms-4/baef721dd5091ec3f61f4d8d8b250558/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/djibril/.gradle/caches/transforms-4/a003eb77cf021ded6404aa9440fdfd93/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/djibril/.gradle/caches/transforms-4/3a7fbc7715435c67233337dbe500be9d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/djibril/.gradle/caches/transforms-4/931c9a4e3e0b91eea868f59b5e166e79/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.13.1] /home/djibril/.gradle/caches/transforms-4/ab2dcf7cea51a5eba6368897f48dc662/transformed/core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /home/djibril/.gradle/caches/transforms-4/0d0547e9d933545067000c0d7db2c949/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/1c5ebd408efc0b25aea10dbfd199d1e2/transformed/datastore-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/0750def36606e211a97a7ec0d3dfbb31/transformed/datastore-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/91cb3d908818c8159456917b64417737/transformed/datastore-preferences-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/djibril/.gradle/caches/transforms-4/e63a1292656074a98cc686cc60079159/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/djibril/.gradle/caches/transforms-4/c574cdb8e85bfd35b042e0013700c299/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/djibril/.gradle/caches/transforms-4/c92d7f330eb0e1dc013a988fa7e577c3/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/d841f45881c711ac9808732843352007/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/2ae9ae21ecdbcbf01689f0e274af4285/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/djibril/.gradle/caches/transforms-4/8173c9d5007a933832fb09597ce7b3c9/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/djibril/.gradle/caches/transforms-4/8d561101a8dffeada671b82f18b9f043/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/djibril/.gradle/caches/transforms-4/37b94648c272c47c810bfe225e3fe428/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/djibril/.gradle/caches/transforms-4/f2a3410ea8b038201b7544357ab32ac7/transformed/exifinterface-1.3.7/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/djibril/.gradle/caches/transforms-4/fafe2ed89b4a20fdfecbb239e501eca5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/djibril/.gradle/caches/transforms-4/55fd03e40d13ab3a40b2f25ee974b309/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [io.github.webrtc-sdk:android:125.6422.06.1] /home/djibril/.gradle/caches/transforms-4/64b6481dc998fd4531243cd59be7de9a/transformed/android-125.6422.06.1/AndroidManifest.xml:11:1-14:12
+	package
+		INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:6:5-79
+MERGED from [androidx.media3:media3-common:1.4.1] /home/djibril/.gradle/caches/transforms-4/cf5cc847a66b11d4dfb6aa0c71a640d1/transformed/media3-common-1.4.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-common:1.4.1] /home/djibril/.gradle/caches/transforms-4/cf5cc847a66b11d4dfb6aa0c71a640d1/transformed/media3-common-1.4.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /home/djibril/.gradle/caches/transforms-4/86c9fa3ee7ea776fc1a1b5641f26c02c/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /home/djibril/.gradle/caches/transforms-4/86c9fa3ee7ea776fc1a1b5641f26c02c/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:9:5-71
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:9:22-68
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:12:5-77
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:12:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:13:5-87
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:13:22-84
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:14:5-77
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:14:22-74
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:15:5-68
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:15:22-65
+uses-feature#android.hardware.microphone
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:17:5-88
+	android:required
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:17:62-85
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:17:19-61
+uses-feature#android.hardware.camera
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:19:5-85
+	android:required
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:19:58-82
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:19:19-57
+application
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:21:5-65:19
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:21:5-65:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/djibril/.gradle/caches/transforms-4/37b94648c272c47c810bfe225e3fe428/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/djibril/.gradle/caches/transforms-4/37b94648c272c47c810bfe225e3fe428/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/djibril/.gradle/caches/transforms-4/fafe2ed89b4a20fdfecbb239e501eca5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/djibril/.gradle/caches/transforms-4/fafe2ed89b4a20fdfecbb239e501eca5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:29:9-35
+	android:label
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:27:9-41
+	android:fullBackupContent
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:25:9-54
+	android:roundIcon
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:28:9-54
+	android:icon
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:26:9-43
+	android:allowBackup
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:23:9-35
+	android:theme
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:30:9-42
+	android:dataExtractionRules
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:24:9-65
+	android:usesCleartextTraffic
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:31:9-44
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:22:9-40
+activity#com.wakh.app.MainActivity
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:36:9-45:20
+	android:windowSoftInputMode
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:40:13-55
+	android:exported
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:38:13-36
+	android:theme
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:39:13-46
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:37:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:41:13-44:29
+action#android.intent.action.MAIN
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:42:17-69
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:42:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:43:17-77
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:43:27-74
+service#com.wakh.app.service.SignalingForegroundService
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:47:9-50:56
+	android:exported
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:49:13-37
+	android:foregroundServiceType
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:50:13-53
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:48:13-63
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:60:13-62:54
+	android:resource
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:62:17-51
+	android:name
+		ADDED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml:61:17-67
+uses-sdk
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+MERGED from [androidx.media3:media3-ui:1.4.1] /home/djibril/.gradle/caches/transforms-4/ceb4a4d87b9a1a1228dc1c015ff7af80/transformed/media3-ui-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-ui:1.4.1] /home/djibril/.gradle/caches/transforms-4/ceb4a4d87b9a1a1228dc1c015ff7af80/transformed/media3-ui-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.4.1] /home/djibril/.gradle/caches/transforms-4/2f07a0e32fc8450d1dbadf8c34d424b1/transformed/media3-extractor-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.4.1] /home/djibril/.gradle/caches/transforms-4/2f07a0e32fc8450d1dbadf8c34d424b1/transformed/media3-extractor-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.4.1] /home/djibril/.gradle/caches/transforms-4/cdf9a41ee927019940dc59bb264f4298/transformed/media3-container-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.4.1] /home/djibril/.gradle/caches/transforms-4/cdf9a41ee927019940dc59bb264f4298/transformed/media3-container-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.4.1] /home/djibril/.gradle/caches/transforms-4/57e112be912c3d33e1a55d9adc9248cd/transformed/media3-datasource-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.4.1] /home/djibril/.gradle/caches/transforms-4/57e112be912c3d33e1a55d9adc9248cd/transformed/media3-datasource-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.4.1] /home/djibril/.gradle/caches/transforms-4/0e9b85b422471b2ab3b81359966a154a/transformed/media3-decoder-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.4.1] /home/djibril/.gradle/caches/transforms-4/0e9b85b422471b2ab3b81359966a154a/transformed/media3-decoder-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.4.1] /home/djibril/.gradle/caches/transforms-4/bfdad8349e054cb24d52bf3a23a684b4/transformed/media3-database-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.4.1] /home/djibril/.gradle/caches/transforms-4/bfdad8349e054cb24d52bf3a23a684b4/transformed/media3-database-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.4.1] /home/djibril/.gradle/caches/transforms-4/cf5cc847a66b11d4dfb6aa0c71a640d1/transformed/media3-common-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.4.1] /home/djibril/.gradle/caches/transforms-4/cf5cc847a66b11d4dfb6aa0c71a640d1/transformed/media3-common-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /home/djibril/.gradle/caches/transforms-4/86c9fa3ee7ea776fc1a1b5641f26c02c/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.4.1] /home/djibril/.gradle/caches/transforms-4/86c9fa3ee7ea776fc1a1b5641f26c02c/transformed/media3-exoplayer-1.4.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.7.0] /home/djibril/.gradle/caches/transforms-4/b97d76c8ac756ff42a5e70855e8ff8e5/transformed/media-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.media:media:1.7.0] /home/djibril/.gradle/caches/transforms-4/b97d76c8ac756ff42a5e70855e8ff8e5/transformed/media-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.0] /home/djibril/.gradle/caches/transforms-4/a0111a8eaa95ea17f87c1e569db4fedb/transformed/recyclerview-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.0] /home/djibril/.gradle/caches/transforms-4/a0111a8eaa95ea17f87c1e569db4fedb/transformed/recyclerview-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/djibril/.gradle/caches/transforms-4/fad8cbc8dcdf5bedd9c1a0bfb9724375/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/djibril/.gradle/caches/transforms-4/fad8cbc8dcdf5bedd9c1a0bfb9724375/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/djibril/.gradle/caches/transforms-4/a111712371e645cf2807003ca6de9416/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/djibril/.gradle/caches/transforms-4/a111712371e645cf2807003ca6de9416/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/djibril/.gradle/caches/transforms-4/c99af9e9bdbae9bc5470ba2e50e43360/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/djibril/.gradle/caches/transforms-4/c99af9e9bdbae9bc5470ba2e50e43360/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/djibril/.gradle/caches/transforms-4/7fa559d4cd4ee263281c3616f8cfef18/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/djibril/.gradle/caches/transforms-4/7fa559d4cd4ee263281c3616f8cfef18/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/djibril/.gradle/caches/transforms-4/b26e04bf40b14a42c88176cea3874e69/transformed/navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/djibril/.gradle/caches/transforms-4/b26e04bf40b14a42c88176cea3874e69/transformed/navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.9.1] /home/djibril/.gradle/caches/transforms-4/93697ca8b20383cf1bd252e4e788be96/transformed/activity-1.9.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.1] /home/djibril/.gradle/caches/transforms-4/93697ca8b20383cf1bd252e4e788be96/transformed/activity-1.9.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.1] /home/djibril/.gradle/caches/transforms-4/26111f0661cfeb0fec3f70238c6881e0/transformed/activity-ktx-1.9.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.1] /home/djibril/.gradle/caches/transforms-4/26111f0661cfeb0fec3f70238c6881e0/transformed/activity-ktx-1.9.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /home/djibril/.gradle/caches/transforms-4/98dac8343058f4c560ba5fb775431be7/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /home/djibril/.gradle/caches/transforms-4/98dac8343058f4c560ba5fb775431be7/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [io.coil-kt:coil-compose:2.6.0] /home/djibril/.gradle/caches/transforms-4/6d9dd72368ed533160b994c55985a9e8/transformed/coil-compose-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.6.0] /home/djibril/.gradle/caches/transforms-4/6d9dd72368ed533160b994c55985a9e8/transformed/coil-compose-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.6.0] /home/djibril/.gradle/caches/transforms-4/59fdc0c9f7eda4d6efab7963ad262ac3/transformed/coil-compose-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.6.0] /home/djibril/.gradle/caches/transforms-4/59fdc0c9f7eda4d6efab7963ad262ac3/transformed/coil-compose-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/c43d63e721a69fa9ecd030d58649e5f7/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/c43d63e721a69fa9ecd030d58649e5f7/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/9d330a12d728e5dae107135169818bdf/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/9d330a12d728e5dae107135169818bdf/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/92d05fcb806016f96fe493e622aefaa5/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/92d05fcb806016f96fe493e622aefaa5/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/201fc5161094c8b062cd73d52e74dbd8/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/201fc5161094c8b062cd73d52e74dbd8/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/9cda0623c1a35524b591727656d32541/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/9cda0623c1a35524b591727656d32541/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/fdfa8014f5a860ae559ee43f23e3e6a4/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/fdfa8014f5a860ae559ee43f23e3e6a4/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/0d59a5c80f6771712406be5fdf084fce/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/0d59a5c80f6771712406be5fdf084fce/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/f41fef7deb217ea57e1d84dbdcc5c7cf/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/f41fef7deb217ea57e1d84dbdcc5c7cf/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/3ec6be73ab89de3921e882a53d6919d8/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/3ec6be73ab89de3921e882a53d6919d8/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/78ef8fa56d761372dcd8a8c3d0c32691/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/78ef8fa56d761372dcd8a8c3d0c32691/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/0057571832d1b23519053c0f655d4b6a/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/0057571832d1b23519053c0f655d4b6a/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/8f6af11c66c3ebef3651c4e3c70304a0/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/8f6af11c66c3ebef3651c4e3c70304a0/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/dbab8845c411f02245097d6d709b652f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/dbab8845c411f02245097d6d709b652f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/4b69441051794d6fe500a52081b66f08/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/4b69441051794d6fe500a52081b66f08/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/7c9375bb59da4f3a7b30203136c6a755/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/7c9375bb59da4f3a7b30203136c6a755/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.9.1] /home/djibril/.gradle/caches/transforms-4/a8a85188c3d6c1cdd363d58899d8a4a7/transformed/activity-compose-1.9.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.9.1] /home/djibril/.gradle/caches/transforms-4/a8a85188c3d6c1cdd363d58899d8a4a7/transformed/activity-compose-1.9.1/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-video:2.6.0] /home/djibril/.gradle/caches/transforms-4/f99032aee1629797f7bd972f4918fc12/transformed/coil-video-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-video:2.6.0] /home/djibril/.gradle/caches/transforms-4/f99032aee1629797f7bd972f4918fc12/transformed/coil-video-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.6.0] /home/djibril/.gradle/caches/transforms-4/ab153c5b37094cc00114703d4fe663c8/transformed/coil-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.6.0] /home/djibril/.gradle/caches/transforms-4/ab153c5b37094cc00114703d4fe663c8/transformed/coil-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.6.0] /home/djibril/.gradle/caches/transforms-4/d093b7c439389332c09643b08bf62db9/transformed/coil-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.6.0] /home/djibril/.gradle/caches/transforms-4/d093b7c439389332c09643b08bf62db9/transformed/coil-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.4] /home/djibril/.gradle/caches/transforms-4/a49190bb40912082b2dee24167b9a74d/transformed/lifecycle-livedata-core-2.8.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.4] /home/djibril/.gradle/caches/transforms-4/a49190bb40912082b2dee24167b9a74d/transformed/lifecycle-livedata-core-2.8.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/djibril/.gradle/caches/transforms-4/4f1a8725232093b36824090f1c68b6be/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/djibril/.gradle/caches/transforms-4/4f1a8725232093b36824090f1c68b6be/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/djibril/.gradle/caches/transforms-4/90eb6a5afa8cd21e3f08f37053fad903/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/djibril/.gradle/caches/transforms-4/90eb6a5afa8cd21e3f08f37053fad903/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/3c289165f7edddcb3452f955c9e6052c/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/3c289165f7edddcb3452f955c9e6052c/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/bc3f17d74196cfb08dca06a5ddcf2683/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/bc3f17d74196cfb08dca06a5ddcf2683/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4] /home/djibril/.gradle/caches/transforms-4/708063783db15365ce2eb9cb307e169e/transformed/lifecycle-viewmodel-ktx-2.8.4/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4] /home/djibril/.gradle/caches/transforms-4/708063783db15365ce2eb9cb307e169e/transformed/lifecycle-viewmodel-ktx-2.8.4/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.4] /home/djibril/.gradle/caches/transforms-4/c823f8c352b585da35173c110c2cd0f4/transformed/lifecycle-viewmodel-savedstate-2.8.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.4] /home/djibril/.gradle/caches/transforms-4/c823f8c352b585da35173c110c2cd0f4/transformed/lifecycle-viewmodel-savedstate-2.8.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/476c44388d08f3a036e14fc373e754ca/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/476c44388d08f3a036e14fc373e754ca/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/3fbe01142e2819e2520eedc1555491c5/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/3fbe01142e2819e2520eedc1555491c5/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/f461f0c0a8e4a8e50aa05bed127be1af/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.4] /home/djibril/.gradle/caches/transforms-4/f461f0c0a8e4a8e50aa05bed127be1af/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/djibril/.gradle/caches/transforms-4/e3509a0ad8652fe4e28ec69fc002aa16/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/djibril/.gradle/caches/transforms-4/e3509a0ad8652fe4e28ec69fc002aa16/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/6049f23b542b1736c1b6aae91441b1dd/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/6049f23b542b1736c1b6aae91441b1dd/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/djibril/.gradle/caches/transforms-4/388bfeaf5d959044447c22874c708ed4/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/djibril/.gradle/caches/transforms-4/388bfeaf5d959044447c22874c708ed4/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/djibril/.gradle/caches/transforms-4/48ccb7c3e6d1d5daf1773a0e823c14b1/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/djibril/.gradle/caches/transforms-4/48ccb7c3e6d1d5daf1773a0e823c14b1/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/djibril/.gradle/caches/transforms-4/baef721dd5091ec3f61f4d8d8b250558/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/djibril/.gradle/caches/transforms-4/baef721dd5091ec3f61f4d8d8b250558/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/djibril/.gradle/caches/transforms-4/a003eb77cf021ded6404aa9440fdfd93/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/djibril/.gradle/caches/transforms-4/a003eb77cf021ded6404aa9440fdfd93/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/djibril/.gradle/caches/transforms-4/3a7fbc7715435c67233337dbe500be9d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/djibril/.gradle/caches/transforms-4/3a7fbc7715435c67233337dbe500be9d/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/djibril/.gradle/caches/transforms-4/931c9a4e3e0b91eea868f59b5e166e79/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/djibril/.gradle/caches/transforms-4/931c9a4e3e0b91eea868f59b5e166e79/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.13.1] /home/djibril/.gradle/caches/transforms-4/ab2dcf7cea51a5eba6368897f48dc662/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /home/djibril/.gradle/caches/transforms-4/ab2dcf7cea51a5eba6368897f48dc662/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/djibril/.gradle/caches/transforms-4/0d0547e9d933545067000c0d7db2c949/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/djibril/.gradle/caches/transforms-4/0d0547e9d933545067000c0d7db2c949/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/1c5ebd408efc0b25aea10dbfd199d1e2/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/1c5ebd408efc0b25aea10dbfd199d1e2/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/0750def36606e211a97a7ec0d3dfbb31/transformed/datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/0750def36606e211a97a7ec0d3dfbb31/transformed/datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/91cb3d908818c8159456917b64417737/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /home/djibril/.gradle/caches/transforms-4/91cb3d908818c8159456917b64417737/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/djibril/.gradle/caches/transforms-4/e63a1292656074a98cc686cc60079159/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/djibril/.gradle/caches/transforms-4/e63a1292656074a98cc686cc60079159/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/djibril/.gradle/caches/transforms-4/c574cdb8e85bfd35b042e0013700c299/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/djibril/.gradle/caches/transforms-4/c574cdb8e85bfd35b042e0013700c299/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/djibril/.gradle/caches/transforms-4/c92d7f330eb0e1dc013a988fa7e577c3/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/djibril/.gradle/caches/transforms-4/c92d7f330eb0e1dc013a988fa7e577c3/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/d841f45881c711ac9808732843352007/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/d841f45881c711ac9808732843352007/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/2ae9ae21ecdbcbf01689f0e274af4285/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/2ae9ae21ecdbcbf01689f0e274af4285/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/djibril/.gradle/caches/transforms-4/8173c9d5007a933832fb09597ce7b3c9/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/djibril/.gradle/caches/transforms-4/8173c9d5007a933832fb09597ce7b3c9/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/djibril/.gradle/caches/transforms-4/8d561101a8dffeada671b82f18b9f043/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/djibril/.gradle/caches/transforms-4/8d561101a8dffeada671b82f18b9f043/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/djibril/.gradle/caches/transforms-4/37b94648c272c47c810bfe225e3fe428/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/djibril/.gradle/caches/transforms-4/37b94648c272c47c810bfe225e3fe428/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/djibril/.gradle/caches/transforms-4/f2a3410ea8b038201b7544357ab32ac7/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/djibril/.gradle/caches/transforms-4/f2a3410ea8b038201b7544357ab32ac7/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/djibril/.gradle/caches/transforms-4/fafe2ed89b4a20fdfecbb239e501eca5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/djibril/.gradle/caches/transforms-4/fafe2ed89b4a20fdfecbb239e501eca5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/djibril/.gradle/caches/transforms-4/55fd03e40d13ab3a40b2f25ee974b309/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/djibril/.gradle/caches/transforms-4/55fd03e40d13ab3a40b2f25ee974b309/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [io.github.webrtc-sdk:android:125.6422.06.1] /home/djibril/.gradle/caches/transforms-4/64b6481dc998fd4531243cd59be7de9a/transformed/android-125.6422.06.1/AndroidManifest.xml:13:3-72
+MERGED from [io.github.webrtc-sdk:android:125.6422.06.1] /home/djibril/.gradle/caches/transforms-4/64b6481dc998fd4531243cd59be7de9a/transformed/android-125.6422.06.1/AndroidManifest.xml:13:3-72
+	android:targetSdkVersion
+		INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/djibril/wakh_folder/wakh-android/app/src/main/AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.8] /home/djibril/.gradle/caches/transforms-4/88597e315c6582367ac629b1a0a35fa7/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/djibril/.gradle/caches/transforms-4/fafe2ed89b4a20fdfecbb239e501eca5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/djibril/.gradle/caches/transforms-4/fafe2ed89b4a20fdfecbb239e501eca5/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/djibril/.gradle/caches/transforms-4/6148e5a12fbe0049a65322c71ba15560/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.4] /home/djibril/.gradle/caches/transforms-4/1651bf1be7880fb4d63d42f7ebfa7de0/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+permission#com.wakh.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#com.wakh.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/djibril/.gradle/caches/transforms-4/088e322c0ef27b6e7ad2b2579a2a9352/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/djibril/.gradle/caches/transforms-4/edb9740ebf210d9e3a67459214b0e5e1/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/djibril/.gradle/caches/transforms-4/94b082df58ce643c7a516dbe1ecd1fa3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
