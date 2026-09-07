@@ -28,7 +28,7 @@ android {
         // Android "Unable to resolve host "https"" (ceci reste protégé
         // au runtime par util/ServerConfig.sanitizeSignalingHost, mais
         // autant configurer la bonne valeur dès le départ).
-        buildConfigField("String", "SIGNALING_HOST", "\"wakh.djibthiong.com\"")
+        buildConfigField("String", "SIGNALING_HOST", "\"wakh.djibthiong.com:9090\"")
         buildConfigField("boolean", "SIGNALING_USE_TLS", "false")
     }
 
