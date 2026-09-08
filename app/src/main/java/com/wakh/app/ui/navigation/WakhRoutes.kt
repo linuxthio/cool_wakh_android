@@ -9,6 +9,8 @@ object WakhRoutes {
     const val CREATE_GROUP = "create_group"
     const val SETTINGS = "settings"
     const val CHAT = "chat/{conversationId}"
+    const val GROUP_INFO = "group_info/{groupId}"
 
     fun chat(conversationId: String) = "chat/$conversationId"
+    fun groupInfo(groupId: String) = "group_info/$groupId"
 }

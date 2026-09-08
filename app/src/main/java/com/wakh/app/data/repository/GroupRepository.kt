@@ -22,6 +22,10 @@ class GroupRepository(
 
     fun observeMemberCount(groupId: String): Flow<Int> = groupDao.observeMemberCount(groupId)
 
+    fun observeGroup(groupId: String): Flow<GroupEntity?> = groupDao.observeGroup(groupId)
+
+    fun observeMembers(groupId: String): Flow<List<GroupMemberEntity>> = groupDao.observeMembers(groupId)
+
     suspend fun getGroup(groupId: String): GroupEntity? = groupDao.getGroup(groupId)
 
     suspend fun getMemberPhoneNumbers(groupId: String): List<String> =
@@ -33,5 +37,22 @@ class GroupRepository(
         groupDao.insertGroup(GroupEntity(id = groupId, name = name.trim()))
         groupDao.insertMembers(memberPhoneNumbers.distinct().map { GroupMemberEntity(groupId, it) })
         return groupId
+    }
+
+    /** Renomme un groupe existant — purement local, comme le reste du concept de groupe. */
+    suspend fun renameGroup(groupId: String, name: String) {
+        val trimmed = name.trim()
+        if (trimmed.isBlank()) return
+        groupDao.renameGroup(groupId, trimmed)
+    }
+
+    /** Ajoute un ou plusieurs membres à un groupe existant, à partir de contacts déjà enregistrés. */
+    suspend fun addMembers(groupId: String, memberPhoneNumbers: List<String>) {
+        groupDao.insertMembers(memberPhoneNumbers.distinct().map { GroupMemberEntity(groupId, it) })
+    }
+
+    /** Retire un membre d'un groupe existant — l'historique des messages du groupe n'est pas affecté. */
+    suspend fun removeMember(groupId: String, phoneNumber: String) {
+        groupDao.deleteMember(groupId, phoneNumber)
     }
 }

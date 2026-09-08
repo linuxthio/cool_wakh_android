@@ -64,6 +64,7 @@ fun ChatScreen(
     groupRepository: GroupRepository,
     signalingClient: SignalingClient,
     onBack: () -> Unit,
+    onOpenGroupInfo: (String) -> Unit,
 ) {
     val context = LocalContext.current
 
@@ -138,6 +139,7 @@ fun ChatScreen(
                 },
                 online = if (viewModel.isGroup) null else isOnline,
                 onBack = onBack,
+                onOpenGroupInfo = viewModel.groupId?.let { groupId -> { onOpenGroupInfo(groupId) } },
             )
         },
         containerColor = AppBackground,

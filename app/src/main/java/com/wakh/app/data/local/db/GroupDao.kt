@@ -21,8 +21,14 @@ interface GroupDao {
     @Query("SELECT * FROM groups WHERE id = :groupId LIMIT 1")
     suspend fun getGroup(groupId: String): GroupEntity?
 
+    @Query("SELECT * FROM groups WHERE id = :groupId LIMIT 1")
+    fun observeGroup(groupId: String): Flow<GroupEntity?>
+
     @Query("SELECT * FROM group_members WHERE groupId = :groupId")
     suspend fun getMembers(groupId: String): List<GroupMemberEntity>
+
+    @Query("SELECT * FROM group_members WHERE groupId = :groupId")
+    fun observeMembers(groupId: String): Flow<List<GroupMemberEntity>>
 
     @Query("SELECT COUNT(*) FROM group_members WHERE groupId = :groupId")
     fun observeMemberCount(groupId: String): Flow<Int>
@@ -36,4 +42,10 @@ interface GroupDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMembers(members: List<GroupMemberEntity>)
+
+    @Query("UPDATE groups SET name = :name WHERE id = :groupId")
+    suspend fun renameGroup(groupId: String, name: String)
+
+    @Query("DELETE FROM group_members WHERE groupId = :groupId AND phoneNumber = :phoneNumber")
+    suspend fun deleteMember(groupId: String, phoneNumber: String)
 }

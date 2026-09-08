@@ -2,6 +2,8 @@ package com.wakh.app.ui.conversations
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.wakh.app.data.local.datastore.ThemeMode
+import com.wakh.app.data.local.datastore.UserPreferences
 import com.wakh.app.data.local.db.ContactEntity
 import com.wakh.app.data.local.db.GroupEntity
 import com.wakh.app.data.local.db.MessageEntity
@@ -12,6 +14,7 @@ import com.wakh.app.util.ConversationId
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -32,10 +35,16 @@ data class ConversationUi(
 )
 
 class ConversationsViewModel(
-    private val contactRepository: ContactRepository,
+    contactRepository: ContactRepository,
     messageRepository: MessageRepository,
     groupRepository: GroupRepository,
+    private val userPreferences: UserPreferences,
 ) : ViewModel() {
+
+    /** Nombre de contacts enregistrés, affiché dans l'AppBar de la liste des conversations. */
+    val contactCount: StateFlow<Int> = contactRepository.observeContacts()
+        .map { it.size }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     val conversations: StateFlow<List<ConversationUi>> = combine(
         contactRepository.observeContacts(),
@@ -80,8 +89,8 @@ class ConversationsViewModel(
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
-    /** Retire un contact déjà enregistré (voir ContactRepository.removeContact) — l'historique des messages n'est pas effacé. */
-    fun removeContact(contact: ContactEntity) {
-        viewModelScope.launch { contactRepository.removeContact(contact) }
+    /** Raccourci clair/sombre depuis l'AppBar — voir Paramètres pour le sélecteur complet (Clair/Sombre/Système). */
+    fun setThemeMode(mode: ThemeMode) {
+        viewModelScope.launch { userPreferences.setThemeMode(mode) }
     }
 }

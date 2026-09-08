@@ -6,4 +6,16 @@
     <path
         android:fillColor="#0EA5E9"
         android:pathData="M0,0h108v108h-108z" />
+    <!--
+        Clin d'œil discret aux couleurs du Sénégal (vert/jaune/rouge),
+        placé à droite du micro (dessiné par-dessus dans
+        ic_launcher_foreground.xml) — reste dans la zone sûre de l'icône
+        adaptative (cercle de 66dp centré) sur tous les masques (rond,
+        carré, squircle...), juste à côté du bord droit plat de la
+        capsule du micro (x=66 pour y entre 44 et 58) pour ne jamais le
+        chevaucher.
+    -->
+    <path android:fillColor="#00853F" android:pathData="M68,44h5v8h-5z" />
+    <path android:fillColor="#FDEF42" android:pathData="M73,44h5v8h-5z" />
+    <path android:fillColor="#E31B23" android:pathData="M78,44h5v8h-5z" />
 </vector>

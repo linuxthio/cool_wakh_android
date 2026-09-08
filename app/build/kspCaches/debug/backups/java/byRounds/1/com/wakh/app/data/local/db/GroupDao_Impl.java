@@ -8,6 +8,7 @@ import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -35,6 +36,10 @@ public final class GroupDao_Impl implements GroupDao {
   private final EntityInsertionAdapter<GroupEntity> __insertionAdapterOfGroupEntity;
 
   private final EntityInsertionAdapter<GroupMemberEntity> __insertionAdapterOfGroupMemberEntity;
+
+  private final SharedSQLiteStatement __preparedStmtOfRenameGroup;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteMember;
 
   public GroupDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
@@ -65,6 +70,22 @@ public final class GroupDao_Impl implements GroupDao {
           @NonNull final GroupMemberEntity entity) {
         statement.bindString(1, entity.getGroupId());
         statement.bindString(2, entity.getPhoneNumber());
+      }
+    };
+    this.__preparedStmtOfRenameGroup = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "UPDATE groups SET name = ? WHERE id = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfDeleteMember = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM group_members WHERE groupId = ? AND phoneNumber = ?";
+        return _query;
       }
     };
   }
@@ -101,6 +122,62 @@ public final class GroupDao_Impl implements GroupDao {
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object renameGroup(final String groupId, final String name,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfRenameGroup.acquire();
+        int _argIndex = 1;
+        _stmt.bindString(_argIndex, name);
+        _argIndex = 2;
+        _stmt.bindString(_argIndex, groupId);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfRenameGroup.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object deleteMember(final String groupId, final String phoneNumber,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteMember.acquire();
+        int _argIndex = 1;
+        _stmt.bindString(_argIndex, groupId);
+        _argIndex = 2;
+        _stmt.bindString(_argIndex, phoneNumber);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteMember.release(_stmt);
         }
       }
     }, $completion);
@@ -183,6 +260,46 @@ public final class GroupDao_Impl implements GroupDao {
   }
 
   @Override
+  public Flow<GroupEntity> observeGroup(final String groupId) {
+    final String _sql = "SELECT * FROM groups WHERE id = ? LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindString(_argIndex, groupId);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"groups"}, new Callable<GroupEntity>() {
+      @Override
+      @Nullable
+      public GroupEntity call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
+          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final GroupEntity _result;
+          if (_cursor.moveToFirst()) {
+            final String _tmpId;
+            _tmpId = _cursor.getString(_cursorIndexOfId);
+            final String _tmpName;
+            _tmpName = _cursor.getString(_cursorIndexOfName);
+            final long _tmpCreatedAt;
+            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
+            _result = new GroupEntity(_tmpId,_tmpName,_tmpCreatedAt);
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
   public Object getMembers(final String groupId,
       final Continuation<? super List<GroupMemberEntity>> $completion) {
     final String _sql = "SELECT * FROM group_members WHERE groupId = ?";
@@ -215,6 +332,43 @@ public final class GroupDao_Impl implements GroupDao {
         }
       }
     }, $completion);
+  }
+
+  @Override
+  public Flow<List<GroupMemberEntity>> observeMembers(final String groupId) {
+    final String _sql = "SELECT * FROM group_members WHERE groupId = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindString(_argIndex, groupId);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"group_members"}, new Callable<List<GroupMemberEntity>>() {
+      @Override
+      @NonNull
+      public List<GroupMemberEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfGroupId = CursorUtil.getColumnIndexOrThrow(_cursor, "groupId");
+          final int _cursorIndexOfPhoneNumber = CursorUtil.getColumnIndexOrThrow(_cursor, "phoneNumber");
+          final List<GroupMemberEntity> _result = new ArrayList<GroupMemberEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final GroupMemberEntity _item;
+            final String _tmpGroupId;
+            _tmpGroupId = _cursor.getString(_cursorIndexOfGroupId);
+            final String _tmpPhoneNumber;
+            _tmpPhoneNumber = _cursor.getString(_cursorIndexOfPhoneNumber);
+            _item = new GroupMemberEntity(_tmpGroupId,_tmpPhoneNumber);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @Override

@@ -1,6 +1,7 @@
 package com.wakh.app.ui.chat.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,12 +31,27 @@ import com.wakh.app.ui.theme.SurfaceWhite
  * [online] est `null` pour une conversation de groupe (pas de statut
  * "en ligne" unique pour plusieurs personnes) : dans ce cas, [subtitle]
  * est affiché seul, sans pastille — typiquement le nombre de membres.
+ * [onOpenGroupInfo] n'est fourni (non nul) que pour un groupe : un appui
+ * sur le titre ouvre alors l'écran d'informations du groupe (renommage,
+ * ajout/retrait de membres).
  */
 @Composable
-fun ChatTopBar(title: String, subtitle: String, online: Boolean?, onBack: () -> Unit) {
+fun ChatTopBar(
+    title: String,
+    subtitle: String,
+    online: Boolean?,
+    onBack: () -> Unit,
+    onOpenGroupInfo: (() -> Unit)? = null,
+) {
     TopAppBar(
         title = {
-            Column {
+            Column(
+                modifier = if (onOpenGroupInfo != null) {
+                    Modifier.clickable(onClick = onOpenGroupInfo)
+                } else {
+                    Modifier
+                },
+            ) {
                 Text(title, fontWeight = FontWeight.SemiBold)
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     if (online != null) {

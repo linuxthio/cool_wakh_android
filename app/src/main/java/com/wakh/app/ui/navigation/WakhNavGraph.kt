@@ -26,6 +26,7 @@ import com.wakh.app.ui.auth.WelcomeScreen
 import com.wakh.app.ui.chat.ChatScreen
 import com.wakh.app.ui.conversations.ConversationsListScreen
 import com.wakh.app.ui.creategroup.CreateGroupScreen
+import com.wakh.app.ui.groupinfo.GroupInfoScreen
 import com.wakh.app.ui.settings.SettingsScreen
 import com.wakh.app.util.ConversationId
 
@@ -104,6 +105,7 @@ fun WakhNavGraph(container: AppContainer) {
                 contactRepository = container.contactRepository,
                 messageRepository = container.messageRepository,
                 groupRepository = container.groupRepository,
+                userPreferences = container.userPreferences,
                 onOpenChat = { conversationId -> navController.navigate(WakhRoutes.chat(conversationId)) },
                 onAddContact = { navController.navigate(WakhRoutes.ADD_CONTACT) },
                 onCreateGroup = { navController.navigate(WakhRoutes.CREATE_GROUP) },
@@ -115,6 +117,7 @@ fun WakhNavGraph(container: AppContainer) {
             SettingsScreen(
                 userPreferences = container.userPreferences,
                 authRepository = container.authRepository,
+                contactRepository = container.contactRepository,
                 onBack = { navController.popBackStack() },
             )
         }
@@ -151,6 +154,20 @@ fun WakhNavGraph(container: AppContainer) {
                 contactRepository = container.contactRepository,
                 groupRepository = container.groupRepository,
                 signalingClient = container.signalingClient,
+                onBack = { navController.popBackStack() },
+                onOpenGroupInfo = { groupId -> navController.navigate(WakhRoutes.groupInfo(groupId)) },
+            )
+        }
+
+        composable(
+            route = WakhRoutes.GROUP_INFO,
+            arguments = listOf(navArgument("groupId") { type = NavType.StringType }),
+        ) { backStackEntry ->
+            val groupId = backStackEntry.arguments?.getString("groupId").orEmpty()
+            GroupInfoScreen(
+                groupId = groupId,
+                groupRepository = container.groupRepository,
+                contactRepository = container.contactRepository,
                 onBack = { navController.popBackStack() },
             )
         }

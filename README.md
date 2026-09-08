@@ -30,16 +30,22 @@ résumé technique ci-dessous.
 - **Menu Paramètres** (`ui/settings/`) : nom affiché modifiable (reste purement local), numéro en lecture seule, déconnexion — désormais regroupés ici plutôt qu'un simple bouton dans la liste des conversations.
 - **Suppression "de part et d'autre"** (`MessageRepository.deleteForEveryone`) : pour un message que vous avez envoyé, choix entre "pour moi" (local) et "pour tout le monde" (demande de suppression envoyée au(x) destinataire(s), P2P si en ligne sinon file d'attente serveur — même principe que l'envoi d'un message). Un message reçu ne peut être supprimé que localement.
 
-- **Groupes** (`ui/creategroup/`, `data/repository/GroupRepository.kt`) :
-  création à partir des contacts existants (purement local, Room —
-  `GroupEntity`/`GroupMemberEntity`). Un message envoyé à un groupe est
-  transmis **individuellement à chaque membre** selon exactement le même
-  principe que le 1-à-1 (P2P direct si en ligne, sinon file d'attente) —
-  voir `MessageRepository.attemptGroupTextDelivery` /
-  `attemptGroupMediaDelivery`. **Simplification assumée** : statut agrégé
-  par message (pas de suivi de livraison par membre dans l'UI), pas de
-  gestion des membres après création (ajout/retrait/quitter le groupe).
-  Le serveur n'a aucune notion de "groupe" (voir README du serveur).
+- **Groupes** (`ui/creategroup/`, `ui/groupinfo/`,
+  `data/repository/GroupRepository.kt`) : création à partir des contacts
+  existants (purement local, Room — `GroupEntity`/`GroupMemberEntity`). Un
+  message envoyé à un groupe est transmis **individuellement à chaque
+  membre** selon exactement le même principe que le 1-à-1 (P2P direct si
+  en ligne, sinon file d'attente) — voir
+  `MessageRepository.attemptGroupTextDelivery` /
+  `attemptGroupMediaDelivery`. **Gestion après création** (appui sur le
+  nom du groupe dans l'écran de discussion, `ui/groupinfo/GroupInfoScreen.kt`) :
+  renommage, ajout de membres parmi les contacts existants, retrait d'un
+  membre — l'historique des messages du groupe n'est jamais affecté par
+  ces changements. **Simplification assumée** : statut agrégé par message
+  (pas de suivi de livraison par membre dans l'UI), pas de rôle
+  "administrateur" ni de "quitter le groupe" (retirer un membre se fait
+  uniquement depuis cet écran, pour n'importe quel membre). Le serveur n'a
+  aucune notion de "groupe" (voir README du serveur).
 
 - **Compte obligatoire** : créer un compte (nom + numéro de téléphone +
   code PIN à 4 chiffres, `ui/common/PinInputField.kt`,
@@ -135,10 +141,12 @@ résumé technique ci-dessous.
   toute évolution de schéma efface l'historique local existant au
   lancement suivant. À remplacer par de vraies `Migration` avant toute
   mise en production avec de vrais utilisateurs.
-- Groupes : pas d'ajout/retrait de membre ni de renommage après création,
-  pas de rôle "administrateur". Le réessai d'un message de groupe échoué
-  renvoie à TOUS les membres (pas de suivi individuel de qui l'avait déjà
-  reçu), ce qui peut créer un doublon chez un membre déjà servi.
+- Groupes : ajout/retrait de membre et renommage possibles après création
+  (voir `ui/groupinfo/`), mais pas de rôle "administrateur" — n'importe
+  qui ayant accès à l'appareil peut modifier n'importe quel groupe. Le
+  réessai d'un message de groupe échoué renvoie à TOUS les membres (pas de
+  suivi individuel de qui l'avait déjà reçu), ce qui peut créer un
+  doublon chez un membre déjà servi.
 - Une seule connexion P2P active à la fois (pas d'envois simultanés sur
   plusieurs conversations en parallèle).
 - Pas de suppression de message ni de groupes — volontairement hors du

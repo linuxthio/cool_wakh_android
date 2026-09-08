@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wakh.app.data.local.datastore.ThemeMode
 import com.wakh.app.data.local.datastore.UserPreferences
+import com.wakh.app.data.local.db.ContactEntity
 import com.wakh.app.data.repository.AuthRepository
+import com.wakh.app.data.repository.ContactRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
@@ -17,6 +19,7 @@ import kotlinx.coroutines.launch
 class SettingsViewModel(
     private val userPreferences: UserPreferences,
     private val authRepository: AuthRepository,
+    private val contactRepository: ContactRepository,
 ) : ViewModel() {
 
     var name by mutableStateOf("")
@@ -32,6 +35,10 @@ class SettingsViewModel(
     /** Préférence d'apparence — voir UserPreferences.themeMode (indépendante du compte). */
     val themeMode: StateFlow<ThemeMode> = userPreferences.themeMode
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), ThemeMode.SYSTEM)
+
+    /** Liste des contacts enregistrés, pour permettre leur suppression depuis les paramètres. */
+    val contacts: StateFlow<List<ContactEntity>> = contactRepository.observeContacts()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     init {
         viewModelScope.launch {
@@ -62,5 +69,10 @@ class SettingsViewModel(
 
     fun logout() {
         viewModelScope.launch { authRepository.logout() }
+    }
+
+    /** Retire un contact déjà enregistré (voir ContactRepository.removeContact) — l'historique local des messages n'est pas effacé. */
+    fun removeContact(contact: ContactEntity) {
+        viewModelScope.launch { contactRepository.removeContact(contact) }
     }
 }

@@ -51,7 +51,8 @@ class ChatViewModel(
     private val appContext: Context,
 ) : ViewModel() {
 
-    private val groupId: String? = ConversationId.groupIdOrNull(conversationId)
+    /** `null` pour une conversation individuelle — voir [isGroup]. Exposé pour naviguer vers l'écran d'informations du groupe. */
+    val groupId: String? = ConversationId.groupIdOrNull(conversationId)
     val isGroup: Boolean = groupId != null
 
     val messages: StateFlow<List<MessageEntity>> = messageRepository
@@ -98,18 +99,33 @@ class ChatViewModel(
     private var recordingTickerJob: Job? = null
 
     init {
-        viewModelScope.launch {
-            val currentGroupId = groupId
-            if (currentGroupId != null) {
-                groupRepository.getGroup(currentGroupId)?.let { title = it.name }
-                val members = groupRepository.getMemberPhoneNumbers(currentGroupId)
-                memberCount = members.size
-                val names = mutableMapOf<String, String>()
-                for (phoneNumber in members) {
-                    contactRepository.getContact(phoneNumber)?.let { names[phoneNumber] = it.displayName }
+        val currentGroupId = groupId
+        if (currentGroupId != null) {
+            // Observés en continu (plutôt qu'une simple lecture ponctuelle) :
+            // ce ViewModel reste en mémoire tant que l'écran de discussion
+            // n'est pas fermé, y compris pendant un aller-retour vers
+            // l'écran d'informations du groupe (renommage, ajout/retrait de
+            // membre) — sans Flow, ces changements resteraient invisibles
+            // au retour tant que l'utilisateur ne rouvre pas la conversation.
+            viewModelScope.launch {
+                groupRepository.observeGroup(currentGroupId).collect { group ->
+                    group?.let { title = it.name }
                 }
-                groupMemberNames = names
-            } else {
+            }
+            viewModelScope.launch {
+                groupRepository.observeMembers(currentGroupId).collect { members ->
+                    memberCount = members.size
+                    val names = mutableMapOf<String, String>()
+                    for (member in members) {
+                        contactRepository.getContact(member.phoneNumber)?.let {
+                            names[member.phoneNumber] = it.displayName
+                        }
+                    }
+                    groupMemberNames = names
+                }
+            }
+        } else {
+            viewModelScope.launch {
                 contactRepository.getContact(conversationId)?.let { title = it.displayName }
             }
         }
